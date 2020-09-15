@@ -1,8 +1,11 @@
-package com.spring.security.service;
+package com.spring.security.config;
 
 import com.spring.security.pojo.SysRole;
 import com.spring.security.pojo.SysUser;
 import com.spring.security.pojo.SysUserRole;
+import com.spring.security.service.SysRoleService;
+import com.spring.security.service.SysUserRoleService;
+import com.spring.security.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -4,7 +4,6 @@ import com.spring.security.filter.SmsAuthenticationFilter;
 import com.spring.security.filter.SmsAuthenticationProvider;
 import com.spring.security.handler.CustomAuthenticationFailureHandler;
 import com.spring.security.handler.CustomAuthenticationSuccessHandler;
-import com.spring.security.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

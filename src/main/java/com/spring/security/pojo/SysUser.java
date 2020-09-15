@@ -2,11 +2,13 @@ package com.spring.security.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
-import java.io.Serializable;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import java.util.Collection;
 
 @Setter
 @Getter
-public class SysUser implements Serializable {
+public class SysUser extends User {
 
     static final long serialVersionUID = 1L;
 
@@ -14,7 +16,13 @@ public class SysUser implements Serializable {
 
     private String name;
 
-    private String password;
 
+    public SysUser(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+        super(username, password, authorities);
+    }
+
+    public SysUser(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+    }
 }
 

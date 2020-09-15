@@ -1,7 +1,6 @@
 package com.spring.security.filter;
 
-import com.spring.security.service.UserDetailsService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.spring.security.config.UserDetailsService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;

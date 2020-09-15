@@ -4,7 +4,6 @@ import com.spring.security.filter.VerifyFilter;
 import com.spring.security.handler.CustomAuthenticationFailureHandler;
 import com.spring.security.handler.CustomAuthenticationSuccessHandler;
 import com.spring.security.handler.CustomLogoutSuccessHandler;
-import com.spring.security.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
