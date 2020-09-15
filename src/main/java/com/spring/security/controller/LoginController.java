@@ -3,7 +3,6 @@ package com.spring.security.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -40,7 +39,7 @@ public class LoginController {
 
     @RequestMapping("/admin")
     @ResponseBody
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String printAdmin() {
         return "如果你看见这句话，说明你有read权限";
     }
@@ -53,14 +52,14 @@ public class LoginController {
      */
     @RequestMapping("/admin/c")
     @ResponseBody
-    @PreAuthorize("hasPermission('/admin','c')")
+//    @PreAuthorize("hasPermission('/admin','c')")
     public String printAdminC() {
         return "如果你看见这句话，说明你有创建权限角色";
     }
 
     @RequestMapping("/user")
     @ResponseBody
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     public String printUser() {
         return "如果你看见这句话，说明你有ROLE_USER角色";
     }

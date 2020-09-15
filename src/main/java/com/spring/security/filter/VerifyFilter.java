@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 短信验证码过滤器
+ * 每次请求都会进入进行判断
+ * 短信验证码过滤器  权限过滤器
  */
 @Slf4j
 public class VerifyFilter extends OncePerRequestFilter {
@@ -54,5 +55,7 @@ public class VerifyFilter extends OncePerRequestFilter {
     private boolean isProtectedUrl(HttpServletRequest request) {
         return "POST".equals(request.getMethod()) && pathMatcher.match("/login", request.getServletPath());
     }
+
+
 }
 
