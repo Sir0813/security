@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Component
-public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
     private SysUserService userService;

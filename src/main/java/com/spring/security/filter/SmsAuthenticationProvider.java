@@ -1,6 +1,6 @@
 package com.spring.security.filter;
 
-import com.spring.security.config.UserDetailsService;
+import com.spring.security.config.MyUserDetailsService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -19,9 +19,9 @@ public class SmsAuthenticationProvider implements AuthenticationProvider {
     /**
      * set注入  sms.....config 中需要指定这个service
      */
-    private UserDetailsService userDetailsService;
+    private MyUserDetailsService userDetailsService;
 
-    public void setUserDetailsService(UserDetailsService userDetailsService) {
+    public void setUserDetailsService(MyUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 

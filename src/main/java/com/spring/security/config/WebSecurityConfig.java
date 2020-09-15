@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * 登录
      */
     @Autowired
-    private UserDetailsService userDetailsService;
+    private MyUserDetailsService userDetailsService;
 
     /**
      * 记住我 功能用到
@@ -78,6 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 验证码登录配置类
+     * 关闭需要下面配置作相应修改
      */
     @Autowired
     private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
@@ -173,7 +174,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.apply(smsCodeAuthenticationSecurityConfig).and().authorizeRequests()
 //                 如果有允许匿名的url，填在下面
-                .antMatchers("/login/invalid","/getVerifyCode","/sms/**","/login").permitAll()
+                .antMatchers("/login","/login/invalid","/getVerifyCode","/sms/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login")
